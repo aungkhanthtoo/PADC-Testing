@@ -9,3 +9,12 @@ fun getPostedAgoTimeWithTimeStamp(timeStamp: String): String {
     return if (DateUtils.getRelativeTimeSpanString(long).toString() == "0 minutes ago") "Just now"
     else DateUtils.getRelativeTimeSpanString(long).toString()
 }
+
+fun format959(phone: String): String {
+
+    return when {
+        phone.startsWith("959") -> phone
+        phone.startsWith("09") -> "959" + phone.substring(2, phone.length)
+        else -> "959$phone"
+    }
+}
